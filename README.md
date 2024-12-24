@@ -23,6 +23,11 @@ It's particularly useful during:
 - Hierarchical formatting with indentation
 - Error handling for inaccessible folders
 - Unicode (UTF-8) support
+- Automatic skipping of virtual environment directories ('venv') to:
+  - Reduce unnecessary token usage when sharing with LLMs
+  - Keep the output focused on relevant project files
+  - Improve readability by excluding build and dependency files
+  - Optimize the structure visualization for development purposes
 
 ## Prerequisites
 - Python 3.x
@@ -62,6 +67,8 @@ Complete directory structure: C:/example
 - Directories are indicated with a "/" at the end
 - If there are errors accessing specific directories, an error message will be shown in the report
 - The output file is always saved in UTF-8 format
+- The 'venv' directory is automatically skipped and marked as [Skipped] in the output
+- Virtual environment contents are excluded to optimize the output for LLM communications
 
 ### Limitations
 - Does not show file sizes
