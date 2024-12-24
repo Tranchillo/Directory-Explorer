@@ -23,6 +23,11 @@ Lo script genera automaticamente una rappresentazione testuale chiara e gerarchi
 - Formattazione gerarchica con indentazione
 - Gestione degli errori per cartelle inaccessibili
 - Supporto Unicode (UTF-8)
+- Esclusione automatica delle directory dell'ambiente virtuale ('venv') per:
+  - Ridurre l'utilizzo non necessario di token durante la condivisione con gli LLM
+  - Mantenere l'output focalizzato sui file rilevanti del progetto
+  - Migliorare la leggibilità escludendo file di build e dipendenze
+  - Ottimizzare la visualizzazione della struttura per scopi di sviluppo
 
 ## Prerequisiti
 - Python 3.x
@@ -62,6 +67,8 @@ Struttura completa della directory: C:/esempio
 - Le directory sono indicate con una "/" alla fine
 - In caso di errori nell'accesso a specifiche directory, verrà mostrato un messaggio di errore nel report
 - Il file di output viene sempre salvato in formato UTF-8
+- La directory 'venv' viene automaticamente saltata e contrassegnata come [Saltato] nell'output
+- I contenuti dell'ambiente virtuale sono esclusi per ottimizzare l'output per le comunicazioni con gli LLM
 
 ### Limitazioni
 - Non mostra le dimensioni dei file
